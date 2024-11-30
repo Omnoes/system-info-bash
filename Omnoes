@@ -1,0 +1,12 @@
+#This is a script written by Justin Koster for CYBIT 210 fall semester of Joliet Junior College
+#The purpose of this script is to execute multiple inputs for gather information on a host system
+#! /bin/bash
+echo "System host name: $(hostname)"
+echo "Operating system: $(lsb-releaser -d)"
+echo "System uptime: $(uptime -p)"
+echo "System kernel version: $(uname -r)"
+echo "Memory info: $(free -h)"
+#MAC addresses listed will be marked by the title "Ether"
+echo "System IP and Mac addresses:$(ip addr show | grep -E 'inet|ether')"
+echo "Filesystem info: $(df -hT)"
+echo "Displaying last 5 current error log data: $(grep -i 'error' /var/log/syslog | tail -n 5)"
